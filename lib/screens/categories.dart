@@ -8,11 +8,20 @@ class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
   void _selectCategory(BuildContext context, Category category) {
+    final filteredMeals = dummyMeals
+        .where(
+          (meal) => meal.categories.contains(category.id),
+        )
+        .toList();
+
     // navigation in flutter woks as screens stack - as a user you alwyas see the top most screen; pushing new screen an the top:
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => MealsScreen(title: 'Basic Title', meals: []),
+        builder: (context) => MealsScreen(
+          title: category.title,
+          meals: filteredMeals,
+        ),
       ),
     );
   }
