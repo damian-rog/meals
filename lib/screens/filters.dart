@@ -17,19 +17,19 @@ class _FiltersScreenState extends State<FiltersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MainDrawer(
-        onSelectScreen: (identifier) {
-          Navigator.pop(context);
-          if (identifier == 'meals') {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (ctx) => const TabsScreen(),
-              ),
-            );
-          }
-        },
-      ),
+      // drawer: MainDrawer(
+      //   onSelectScreen: (identifier) {
+      //     Navigator.pop(context);
+      //     if (identifier == 'meals') {
+      //       Navigator.pushReplacement(
+      //         context,
+      //         MaterialPageRoute(
+      //           builder: (ctx) => const TabsScreen(),
+      //         ),
+      //       );
+      //     }
+      //   },
+      // ),
       appBar: AppBar(
         title: const Text('Your filters'),
       ),
