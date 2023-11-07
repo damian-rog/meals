@@ -46,7 +46,6 @@ class _FiltersScreenState extends State<FiltersScreen> {
       body: WillPopScope(
         onWillPop: () async {
           //funtion invokes everty time user leaves this screen; leaving the screen with data passing back
-          print('back!');
           Navigator.of(context).pop({
             Filter.glutenFree: _glutenFreeFilterSet,
             Filter.lactoseFree: _lactoseFreeFilterSet,
