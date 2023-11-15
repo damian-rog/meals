@@ -8,12 +8,10 @@ class MealsScreen extends StatelessWidget {
     super.key,
     this.title,
     required this.meals,
-    required this.onToggleFavourite,
   });
 
   final String? title;
   final List<Meal> meals;
-  final void Function(Meal meal) onToggleFavourite;
 
   void selectMeal(BuildContext context, Meal meal) {
     // navigation in flutter woks as screens stack - as a user you alwyas see the top most screen; pushing new screen an the top:
@@ -22,7 +20,6 @@ class MealsScreen extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => MealDetailsScreen(
           meal: meal,
-          onToggleFavourite: onToggleFavourite,
         ),
       ),
     );
